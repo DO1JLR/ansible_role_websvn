@@ -1,4 +1,7 @@
 ---
+websvn__required_packages:
+  - php-pear
+
 # versionscheck
 playbook_version_number: 5 # should be over ninethousand
 playbook_version_path: 'role-websvn_roles-ansible_github.com.version'

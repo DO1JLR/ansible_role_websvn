@@ -1,0 +1,7 @@
+---
+- include_tasks: versioncheck.yml
+  when: submodules_versioncheck|bool
+
+- include_tasks: packages.yml
+  when: websvn__manage_packages | bool
+

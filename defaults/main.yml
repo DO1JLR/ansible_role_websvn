@@ -1,4 +1,6 @@
 ---
+websvn__manage_packages: true
+websvn__state: 'present'
+
 # should we do a version check? (recomended)
 submodules_versioncheck: false
-
