@@ -1,6 +1,11 @@
 ---
 websvn__required_packages:
   - php-pear
+websvn__pear_channel: 'pear.geshi.org'
+websvn__pear_packages:
+  - Archive_Tar
+  - geshi/geshi
+  - Text_Diff
 
 # versionscheck
 playbook_version_number: 5 # should be over ninethousand
