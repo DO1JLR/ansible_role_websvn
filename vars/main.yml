@@ -6,8 +6,12 @@ websvn__pear_packages:
   - Archive_Tar
   - geshi/geshi
   - Text_Diff
+websvn__packages:
+  - websvn
+  - enscript
+
 
 # versionscheck
-playbook_version_number: 5 # should be over ninethousand
+playbook_version_number: 8 # should be over ninethousand
 playbook_version_path: 'role-websvn_roles-ansible_github.com.version'
 

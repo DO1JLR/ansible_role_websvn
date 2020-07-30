@@ -6,3 +6,14 @@
   when: websvn__manage_packages | bool
 
 - include_tasks: pear_setup.yml
+
+- name: install websvn
+  become: true
+  package:
+    name: "{{ websvn__packages }}"
+    state: "{{ websvn__state }}"
+  register: websvn
+  failed_when: false
+
+- include_task: manual_install_websvn.yml
+  when: websvn.failed | bool
