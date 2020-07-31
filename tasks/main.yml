@@ -15,5 +15,5 @@
   register: websvn
   failed_when: false
 
-- include_task: manual_install_websvn.yml
+- include_tasks: manual_install_websvn.yml
   when: websvn.failed | bool
