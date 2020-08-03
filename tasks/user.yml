@@ -1,0 +1,14 @@
+---
+- name: "add group {{ websvn__web_group }}"
+  become: true
+  group:
+    name: "{{ websvn__web_group }}"
+    state: present
+
+- name: "add user {{ websvn__web_user }}"
+  become: true
+  user:
+    name: "{{ websvn__web_user }}"
+    group: "{{ websvn__web_group }}"
+    append: true
+    shell: '/bin/bash'

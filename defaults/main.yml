@@ -1,6 +1,7 @@
 ---
 websvn__manage_packages: true
 websvn__state: 'present'
+websvn__adduser: true
 websvn__web_user: nginx
 websvn__web_group: nginx
 websvn__version: 2.5
