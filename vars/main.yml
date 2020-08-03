@@ -12,6 +12,6 @@ websvn__packages:
 
 
 # versionscheck
-playbook_version_number: 8 # should be over ninethousand
+playbook_version_number: 12 # should be over ninethousand
 playbook_version_path: 'role-websvn_roles-ansible_github.com.version'
 

@@ -1,0 +1,17 @@
+---
+- name: make sure /var/www exist
+  become: true
+  file:
+    path: /var/www
+    recurse: yes
+    state: directory
+    owner: "{{ websvn__web_user }}"
+    group: "{{ websvn__web_group }}"
+
+- name: clone websvn
+  become: true
+  become_user: "{{ websvn__web_user }}"
+  git:
+    repo: https://github.com/websvnphp/websvn.git
+    dest: /var/www/websvn
+    version: "{{ websvn__version }}"

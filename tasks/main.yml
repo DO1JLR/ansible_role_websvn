@@ -13,7 +13,7 @@
     name: "{{ websvn__packages }}"
     state: "{{ websvn__state }}"
   register: websvn
-  failed_when: false
+  ignore_errors: true
 
 - include_tasks: manual_install_websvn.yml
   when: websvn.failed | bool

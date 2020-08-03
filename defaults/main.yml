@@ -1,6 +1,10 @@
 ---
 websvn__manage_packages: true
 websvn__state: 'present'
+websvn__web_user: nginx
+websvn__web_group: nginx
+websvn__version: 2.5
+
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false
