@@ -4,7 +4,9 @@ websvn__state: 'present'
 websvn__web_user: nginx
 websvn__web_group: nginx
 websvn__version: 2.5
+websvn__config_src: templates/config.php
 
+websvn__config_parentPath: '/var/svn' # false for disable this option
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false

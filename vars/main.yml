@@ -1,6 +1,7 @@
 ---
 websvn__required_packages:
   - php-pear
+  - subversion
 websvn__pear_channel: 'pear.geshi.org'
 websvn__pear_packages:
   - Archive_Tar
@@ -12,6 +13,6 @@ websvn__packages:
 
 
 # versionscheck
-playbook_version_number: 12 # should be over ninethousand
+playbook_version_number: 13 # should be over ninethousand
 playbook_version_path: 'role-websvn_roles-ansible_github.com.version'
 
