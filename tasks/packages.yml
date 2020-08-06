@@ -10,4 +10,4 @@
   package:
     name: "{{ websvn__optional_packages }}"
     state: "{{ websvn__state }}"
-  when: "{{ websvn__install_optional_packages | bool }}"
+  when: websvn__install_optional_packages | bool
