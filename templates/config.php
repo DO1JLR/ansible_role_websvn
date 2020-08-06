@@ -1,3 +1,4 @@
+{%- raw -%}
 <?php
 // WebSVN - Subversion repository viewing via the web using PHP
 // Copyright (C) 2004-2006 Tim Armes
@@ -115,7 +116,11 @@
 //   Windows: c:\\svn
 //
 // $config->parentPath('filesystem path');
-{% if websvn__config_parentPath | bool %}$config->parentPath('{{ websvn__config_parentPath }}');{% endif %}
+{% endraw %}
+{%- if websvn__manage_config_parentPath | bool %}
+$config->parentPath('{{ websvn__config_parentPath }}');
+{% endif %}
+{%- raw %}
 // $config->parentPath('filesystem path', 'group');
 //
 // To exclude a repository from being added by the parentPath method uncomment the next line
@@ -499,3 +504,4 @@ $config->expandTabsBy(8);
 // $config->expandTabsBy(3, 'myrep'); // Expand Tabs by 3 for repository 'myrep'
 
 // }}}
+{%- endraw -%}
