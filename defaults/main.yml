@@ -10,5 +10,9 @@ websvn__config_src: templates/config.php
 websvn__config_parentPath: '/var/svn' # false for disable this option
 websvn__manage_config_parentPath: true
 
+websvn__install_optional_packages: true
+websvn__optional_packages:
+  - sudo
+
 # should we do a version check? (recomended)
 submodules_versioncheck: false
