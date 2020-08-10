@@ -6,6 +6,7 @@ websvn__web_user: nginx
 websvn__web_group: nginx
 websvn__version: 2.5
 websvn__config_src: templates/config.php
+websvn__skip_peap: false
 
 websvn__config_parentPath: '/var/svn' # false for disable this option
 websvn__manage_config_parentPath: true

@@ -9,7 +9,7 @@
   when: websvn__adduser | bool
 
 - include_tasks: pear_setup.yml
-
+  when: not websvn__skip_peap | bool
 - name: install websvn
   become: true
   package:
