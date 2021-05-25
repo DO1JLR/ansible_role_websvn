@@ -22,5 +22,6 @@
     src: "{{ websvn__config_src }}"
     dest: "/var/www/websvn/include/config.php"
     backup: true
+    mode: 0644
     owner: "{{ websvn__web_user }}"
     group: "{{ websvn__web_group }}"
