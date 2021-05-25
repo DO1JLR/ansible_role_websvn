@@ -1,7 +1,7 @@
 ---
 - name: make sure /var/www exist
   become: true
-  file:
+  ansible.builtin.file:
     path: /var/www
     recurse: yes
     state: directory
@@ -11,14 +11,14 @@
 - name: clone websvn
   become: true
   become_user: "{{ websvn__web_user }}"
-  git:
+  ansible.builtin.git:
     repo: https://github.com/websvnphp/websvn.git
     dest: /var/www/websvn
     version: "{{ websvn__version }}"
 
 - name: copy config template
   become: true
-  template:
+  ansible.builtin.template:
     src: "{{ websvn__config_src }}"
     dest: "/var/www/websvn/include/config.php"
     backup: true

@@ -1,22 +1,28 @@
 ---
-- include_tasks: versioncheck.yml
+- name: optional versionscheck
+  ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
-- include_tasks: packages.yml
+- name: install websvn packages
+  ansible.builtin.include_tasks: packages.yml
   when: websvn__manage_packages | bool
 
-- include_tasks: user.yml
+- name: websvn users
+  ansible.builtin.include_tasks: user.yml
   when: websvn__adduser | bool
 
-- include_tasks: pear_setup.yml
+- name: setup php pear stuff
+  ansible.builtin.include_tasks: pear_setup.yml
   when: not websvn__skip_peap | bool
+
 - name: install websvn
   become: true
-  package:
+  ansible.builtin.package:
     name: "{{ websvn__packages }}"
     state: "{{ websvn__state }}"
   register: websvn
   ignore_errors: true
 
-- include_tasks: manual_install_websvn.yml
+- name: install websvn manually
+  ansible.builtin.include_tasks: manual_install_websvn.yml
   when: websvn.failed | bool

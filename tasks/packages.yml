@@ -1,13 +1,13 @@
 ---
 - name: install required packages for websvn
   become: true
-  package:
+  ansible.builtin.package:
     name: "{{ websvn__required_packages }}"
     state: "{{ websvn__state }}"
 
 - name: install optional OS dependencis (primary for testing)
   become: true
-  package:
+  ansible.builtin.package:
     name: "{{ websvn__optional_packages }}"
     state: "{{ websvn__state }}"
   when: websvn__install_optional_packages | bool

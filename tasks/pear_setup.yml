@@ -1,14 +1,14 @@
 ---
 - name: add pear channel '{{ websvn__pear_channel }}'
   become: true
-  command: "pear channel-discover {{ websvn__pear_channel }}"
+  ansible.builtin.command: "pear channel-discover {{ websvn__pear_channel }}"
   register: command_result
   changed_when: command_result.rc == 0
   failed_when: false
 
 - name: Install pear packages
   become: true
-  pear:
+  community.general.pear:
     name: "{{ item }}"
     state: "{{ websvn__state }}"
   with_items: "{{ websvn__pear_packages }}"

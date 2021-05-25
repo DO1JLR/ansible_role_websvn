@@ -1,13 +1,13 @@
 ---
 - name: "add group {{ websvn__web_group }}"
   become: true
-  group:
+  ansible.builtin.group:
     name: "{{ websvn__web_group }}"
     state: present
 
 - name: "add user {{ websvn__web_user }}"
   become: true
-  user:
+  ansible.builtin.user:
     name: "{{ websvn__web_user }}"
     group: "{{ websvn__web_group }}"
     append: true
