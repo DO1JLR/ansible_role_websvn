@@ -10,11 +10,20 @@
 
 - name: clone websvn
   become: true
-  become_user: "{{ websvn__web_user }}"
+#  become_user: "{{ websvn__web_user }}"
   ansible.builtin.git:
     repo: https://github.com/websvnphp/websvn.git
     dest: /var/www/websvn
     version: "{{ websvn__version }}"
+
+- name: chown "{{ websvn__web_user }}" /var/www/websvn
+  become: true
+  ansible.builtin.file:
+    path: /var/www/websvn
+    recurse: yes
+    state: directory
+    owner: "{{ websvn__web_user }}"
+    group: "{{ websvn__web_group }}"
 
 - name: copy config template
   become: true
