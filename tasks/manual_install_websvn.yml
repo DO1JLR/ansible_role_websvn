@@ -8,12 +8,26 @@
     owner: "{{ websvn__web_user }}"
     group: "{{ websvn__web_group }}"
 
+- name: git config --global --add safe.directory /var/www/websvn
+  become: true
+  ansible.builtin.git_config:
+    scope: global
+    name: safe.directory
+    value: '/var/www/websvn'
+
+- name: Set default git editor
+  ansible.builtin.git_config:
+    name: core.editor
+    scope: global
+    value: vim
+
 - name: clone websvn
   become: true
 #  become_user: "{{ websvn__web_user }}"
   ansible.builtin.git:
     repo: https://github.com/websvnphp/websvn.git
     dest: /var/www/websvn
+    recursive: true
     version: "{{ websvn__version }}"
 
 - name: chown "{{ websvn__web_user }}" /var/www/websvn
